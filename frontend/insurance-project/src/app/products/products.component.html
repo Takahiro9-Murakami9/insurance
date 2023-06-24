@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
   <div class="container">
     <h2 class="products__title">商品</h2>
     <ul class="products__list">
@@ -22,4 +22,19 @@
       </li>
     </ul>
   </div>
-</section>
+</section> -->
+
+<ngx-slick-carousel class="carousel" 
+  #slickModel="slick-carousel"
+  [config]="slideConfig"
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<img src="{{ slide.image }}" alt="Slide Image" width="100%" />
+</div>
+</ngx-slick-carousel>
+
+<!-- <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->

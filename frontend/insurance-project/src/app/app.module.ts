@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +35,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
