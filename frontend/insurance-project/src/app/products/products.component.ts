@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.sass']
 })
+
 export class ProductsComponent implements OnInit {
   slides = [
-    { image: 'assets/images/unchi_character.png' },
-    { image: 'assets/images/Dragon_sheep.jpg' },
-    { image: 'assets/images/stroberry_apple.jpg' },
-    { image: 'assets/images/20210227224909.png '}
+    { id: '1', title: '車の保険', image: 'assets/images/car_insurance.jpg' },
+    { id: '2', title: 'バイクの保険', image: 'assets/images/motor_bike_insurance.jpg' },
+    { id: '3', title: '自転車の保険', image: 'assets/images/bicycle_insurance.jpg' },
+    { id: '4', title: '交通障害保険', image: 'assets/images/traffic_accident_insurance.jpg'}
   ];
 
   slideConfig = {
@@ -35,6 +38,12 @@ export class ProductsComponent implements OnInit {
   beforeChange(e: any) {
     console.log('beforeChange');
   }
-  constructor() {}
+
+  goToProductDetails(id: string) {
+    this.router.navigate(['/products', id]);
+  }
+
+  constructor(private router: Router, private productService: ProductService) {}
+
   ngOnInit(): void {}
 }
