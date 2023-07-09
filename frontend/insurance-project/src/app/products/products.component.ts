@@ -13,7 +13,8 @@ export class ProductsComponent implements OnInit {
     { id: '1', title: '車の保険', image: 'assets/images/car_insurance.jpg' },
     { id: '2', title: 'バイクの保険', image: 'assets/images/motor_bike_insurance.jpg' },
     { id: '3', title: '自転車の保険', image: 'assets/images/bicycle_insurance.jpg' },
-    { id: '4', title: '交通障害保険', image: 'assets/images/traffic_accident_insurance.jpg'}
+    { id: '4', title: '交通障害保険', image: 'assets/images/traffic_accident_insurance.jpg'},
+    { id: '5', title: '航空機保険', image: 'assets/images/aviation_insurance.jpg'}
   ];
 
   slideConfig = {

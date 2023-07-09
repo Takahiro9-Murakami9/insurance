@@ -46,6 +46,14 @@ export class ProductService {
           image: 'assets/images/traffic_accident_insurance.jpg',
           // Other properties as needed
         });
+        case '5':
+        return of({
+          id: '5',
+          title: '航空機保険',
+          description: '航空機保険の詳細情報です。',
+          image: 'assets/images/aviation_insurance.jpg',
+          // Other properties as needed
+        });
       default:
         return of(null); // Return null or handle other cases as needed
     }
