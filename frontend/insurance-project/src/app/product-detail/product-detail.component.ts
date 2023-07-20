@@ -24,9 +24,18 @@ export class ProductDetailComponent implements OnInit {
         });
       }
 
-      getProductDetails() {
-        this.productService.getProductDetails(this.productId).subscribe(data => {
-          this.product = data;
-        });
+    getProductDetails() {
+      this.productService.getProductDetails(this.productId).subscribe(data => {
+        this.product = data;
+      });
+    }
+
+    getRatingArray(rating: number): number[] {
+      const ratingArray = [];
+      for (let i = 0; i < rating; i++) {
+        ratingArray.push(i);
       }
+      return ratingArray;
+    }
+    
 }

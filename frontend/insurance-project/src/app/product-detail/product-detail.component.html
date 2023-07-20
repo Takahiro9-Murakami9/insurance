@@ -2,7 +2,41 @@
 <p>商品ID: {{ productId }}</p>
 
 <div *ngIf="product">
-    <h3>{{ product.title }}</h3>
-    <p>{{ product.description }}</p>
-    <img [src]="product.image" alt="Product Image">
+  <h3>{{ product.title }}</h3>
+  <div class="content-wrapper">
+    <img [src]="product.image" alt="Product Image" class="custom-image">
+    <p>{{ product.Coverage_Details }}</p>
+    <ul>
+      <li>
+        {{ product.Coverage_Details_01}}
+      </li>
+      <li>
+        {{ product.Coverage_Details_02}}
+      </li>
+      <li>
+        {{ product.Coverage_Details_03}}
+      </li>
+    </ul>
+    <p>{{ product.Coverage_Limit }}</p>
+    <p>{{ product.Special_Conditions }}</p>
+    <p>{{ product.Premium }}</p>
+    
+    <!-- レビュー情報の表示 -->
+    <div *ngIf="product.reviews && product.reviews.length > 0">
+      <h4>レビュー</h4>
+      <ul>
+        <li *ngFor="let review of product.reviews">
+          <div class="rating">
+            評価:
+            <span *ngFor="let i of getRatingArray(review.rating)">
+              💩
+            </span>
+          </div>
+          <div>コメント: {{ review.comment }}</div>
+          <div>投稿者: {{ review.user }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+   
 </div>
