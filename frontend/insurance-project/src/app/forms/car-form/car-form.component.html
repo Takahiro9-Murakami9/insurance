@@ -1,0 +1,52 @@
+<form #carForm="ngForm" (ngSubmit)="onFormSubmit()">
+
+  <label for="carAge">車両の年数：</label>
+  <input type="number" id="carAge" name="carAge" formControlName="carAge" required>
+
+  <label for="carType">車両タイプ</label>
+  <select id="carType" name="carType" formControlName="carType" required>
+    <option value="sedan">セダン</option>
+    <option value="suv">SUV</option>
+    <option value="sports">スポーツカー</option>
+  </select>
+
+  <label for="carMaker">車両のメーカー：</label>
+  <input type="text" id="carMaker" name="carMaker" formControlName="carMaker" required>
+ 
+  <label for="carModel">車両のモデル：</label>
+  <input type="text" id="carModel" name="carModel" formControlName="carModel" required>
+
+  <label for="carDisplacement">車両の排気量：</label>
+  <input type="number" id="carDisplacement" name="carDisplacement" formControlName="carDisplacement" required>
+
+  <label for="carFuelType">車両の燃料タイプ</label>
+  <select id="carFuelType" name="carFuelType" formControlName="carFuelType" required>
+    <option value="gasoline">ガソリン</option>
+    <option value="diesel">ディーゼル</option>
+    <option value="hybrid">ハイブリッド</option>
+    <option value="electric">電気</option>
+  </select>
+
+  <label for="carOwner"></label>
+  <input type="text" id="carOwner" name="carOwner" formControlName="carOwner" required>
+
+  <label for="carOwnership">車両の所有形態</label>
+  <select id="carOwnership" name="carOwnership" formControlName="carOwnership" required>
+    <option value="owned">所有</option>
+    <option value="leased">リース</option>
+    <option value="financed">ローン</option>
+  </select>
+
+  <label for="carMileage">車両の走行距離</label>
+  <input type="number" id="carMileage" name="carMileage" formControlName="carMileage" required>
+
+  <label for="carInsuranceAmount">現在の車両の保険金額</label>
+  <input type="number" id="carInsuranceAmount" name="carInsuranceAmount"  formControlName="carInsuranceAmount" required>
+
+  <button type="submit" [disabled]="carForm.invalid">計算する</button>
+
+</form>
+
+<div *ngIf="calculatedPremium !== undefined">
+  <p>保険料：{{ calculatedPremium }} 円</p>
+</div>

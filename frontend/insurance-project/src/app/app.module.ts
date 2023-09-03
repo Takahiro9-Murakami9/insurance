@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './pages/about/about.component';
+import { CarFormComponent } from './forms/car-form/car-form.component';
+import { BicycleFormComponent } from './forms/bicycle-form/bicycle-form.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,14 +38,17 @@ const routes: Routes = [
     FooterComponent,
     HomeComponent,
     ProductDetailComponent,
-    AboutComponent
+    AboutComponent,
+    CarFormComponent,
+    BicycleFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     SlickCarouselModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,7 +21,8 @@ export class ProductsComponent implements OnInit {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
-    arrows: true,
+    prevArrow: '<div class="custom-prev-arrow">←</div>',
+    nextArrow: '<div class="custom-next-arrow">→</div>',
     dots: false,
     autoplay: true,
     autoplaySpeed: 3000
