@@ -37,6 +37,16 @@
         </li>
       </ul>
     </div>
+
+    <!--form -->
+    <div *ngIf="productId === '1'; then carForm else otherForm"></div>
+    <ng-template #carForm>
+        <app-car-form></app-car-form>
+    </ng-template>
+    <ng-template #otherForm>
+        <!-- Display a message or alternative content if productId is not 1 -->
+    </ng-template>
+
   </div>
    
 </div>

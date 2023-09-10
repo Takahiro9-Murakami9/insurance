@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "../product.service";
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { CarFormComponent } from "../forms/car-form/car-form.component";
 
 @Component({
     selector: 'app-product-detail',
@@ -11,6 +13,7 @@ import { ProductService } from "../product.service";
 export class ProductDetailComponent implements OnInit {
     productId!: string;
     product: any;
+    carFormComponent = CarFormComponent;
     
     constructor(
         private route: ActivatedRoute,

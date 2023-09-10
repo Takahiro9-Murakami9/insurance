@@ -38,7 +38,6 @@ export class ProductService {
           ]
           // Other properties as needed
         };
-        console.log(productData); // Add this line to log the retrieved data
         return of(productData);
 
       case '2':
